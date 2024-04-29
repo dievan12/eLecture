@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane prefHeight="750.0" prefWidth="1100.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lecture.ui.Dashboard">
+    <top>
+        <HBox alignment="CENTER_RIGHT" spacing="15" style="-fx-background-color: #702963; -fx-padding: 10px;">
+            <Label fx:id="usernameLabel" prefHeight="18.0" prefWidth="92.0" text="Username" textFill="WHITE">
+                <font>
+                    <Font name="Tahoma Bold" size="14" />
+                </font>
+            <HBox.margin>
+               <Insets right="350.0" />
+            </HBox.margin>
+            </Label>
+         <Label alignment="TOP_LEFT" maxHeight="23.0" maxWidth="124.0" prefHeight="23.0" prefWidth="124.0" text="eLecture" textFill="#fcfcfc">
+            <HBox.margin>
+               <Insets right="380.0" />
+            </HBox.margin>
+            <font>
+               <Font name="Tahoma Bold" size="25.0" />
+            </font>
+         </Label>
+            <Button onAction="#handleLogout" prefHeight="26.0" prefWidth="73.0" style="-fx-background-color: #8a2be2;" text="Logout" textFill="WHITE">
+            <HBox.margin>
+               <Insets />
+            </HBox.margin></Button>
+        </HBox>
+    </top>
+
+    <center>
+        <VBox alignment="TOP_CENTER" spacing="20">
+            <padding>
+                <Insets bottom="20" left="20" right="20" top="20" />
+            </padding>
+         <BorderPane.margin>
+            <Insets />
+         </BorderPane.margin>
+        </VBox>
+        <VBox alignment="CENTER" fillWidth="true" spacing="20">
+            <padding>
+                <Insets bottom="20" left="20" right="20" top="20" />
+            </padding>
+         <Button fx:id="uploadPost" alignment="CENTER" mnemonicParsing="false" onAction="#onUploadAction" prefHeight="26.0" prefWidth="150.0" style="-fx-background-color: #8a2be2;" text="Upload Post" textFill="WHITE">
+            <VBox.margin>
+               <Insets />
+            </VBox.margin>
+         </Button>
+        </VBox>
+        <VBox alignment="CENTER" spacing="10">
+            <Label fx:id="currentUsername" style="-fx-font-size: 20;" textFill="#2c3e50" />
+            <ListView fx:id="posts" prefHeight="232.0" prefWidth="1100.0">
+            <VBox.margin>
+               <Insets bottom="90.0" />
+            </VBox.margin></ListView>
+            <TextArea fx:id="postTextArea" prefHeight="100" prefWidth="300" promptText="Enter your Question Here.." wrapText="true">
+            <VBox.margin>
+               <Insets top="100.0" />
+            </VBox.margin></TextArea>
+            <Button onAction="#onUploadAction" prefHeight="30.0" prefWidth="154.0" style="-fx-background-color: #8a2be2; -fx-text-fill: white;" text="Upload Post">
+            <VBox.margin>
+               <Insets top="10.0" />
+            </VBox.margin></Button>
+        </VBox>
+    </center>
+
+    <bottom>
+        <HBox alignment="CENTER_LEFT" prefHeight="56.0" prefWidth="1100.0" style="-fx-background-color: #702963;">
+            <padding>
+                <Insets bottom="10" left="10" right="10" top="10" />
+            </padding>
+         <children>
+            <Button fx:id="refreshFeed" mnemonicParsing="false" onAction="#onRefreshAction" prefHeight="26.0" prefWidth="150.0" style="-fx-background-color: #8a2be2;" text="Refresh Feed" textFill="WHITE">
+               <HBox.margin>
+                  <Insets left="466.0" />
+               </HBox.margin>
+            </Button>
+         </children>
+
+        </HBox>
+    </bottom>
+</BorderPane>
